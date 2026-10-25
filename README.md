@@ -14,7 +14,7 @@ Lapis Bot is a Discord bot developed to enhance proficiency in Discord.Net and s
 
 ### Prerequisites:
 
-- .NET 8.0 or later
+- .NET 10.0 or later
 - Discord.Net library
 
 ## Usage
