@@ -1,7 +1,8 @@
-﻿namespace LapisBot.ServiceConfiguration;
+namespace LapisBot.ServiceConfiguration;
 
 using Discord;
 using Discord.Interactions;
+using Discord.Rest;
 using Discord.WebSocket;
 using Handlers.Interaction;
 using Infrastructure.ServiceCollection;
@@ -23,6 +24,7 @@ public static class ServiceCollection
         var socketClient = new DiscordSocketClient(socketConfig);
 
         services.AddSingleton(socketClient);
+        services.AddSingleton<IRestClientProvider>(socketClient);
         services.AddSingleton<InteractionService>();
         services.AddHostedService<InteractionHandlingService>();
         services.AddHostedService<DiscordStartupService>();
